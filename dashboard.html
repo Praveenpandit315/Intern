@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Void.Praveen</title>
+  <!-- Base styles (shared across all pages) -->
+  <link rel="stylesheet" href="css/base.css" />
+  <!-- Dashboard page specific styles -->
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <!-- ======================================
+       DASHBOARD LAYOUT
+       Left Sidebar + Main Content
+  ======================================= -->
+  <div class="dashboard-layout">
+
+    <!-- ---- LEFT SIDEBAR ---- -->
+    <aside class="sidebar">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="sidebar-brand">Void.Praveen</a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="sidebar-nav">
+
+          <li>
+            <a href="dashboard.html" class="active">
+              <span class="nav-icon">🏠</span> Dashboard
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="nav-icon">📚</span> Courses
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="nav-icon">📝</span> Assignments
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="nav-icon">👤</span> Profile
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Logout Link at the bottom -->
+      <div class="sidebar-logout">
+        <a href="index.html">
+          <span>🚪</span> Logout
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- ---- MAIN CONTENT ---- -->
+    <main class="dashboard-main">
+
+      <!-- Page Header / Welcome Message -->
+      <div class="dashboard-header">
+        <h1>Welcome Back, Student! 👋</h1>
+        <p>Here's a summary of your learning activity.</p>
+      </div>
+
+      <!-- ---- STATISTICS CARDS ---- -->
+      <div class="stats-grid">
+
+        <!-- Card 1: Total Courses -->
+        <div class="stat-card">
+          <div class="stat-icon">📚</div>
+          <div class="stat-info">
+            <h3>5</h3>
+            <p>Total Courses</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Assignments -->
+        <div class="stat-card">
+          <div class="stat-icon">📝</div>
+          <div class="stat-info">
+            <h3>12</h3>
+            <p>Assignments</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Attendance -->
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-info">
+            <h3>85%</h3>
+            <p>Attendance</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ---- RECENT ACTIVITIES SECTION ---- -->
+      <div class="activity-section">
+
+        <h2>Recent Activities</h2>
+
+        <ul class="activity-list">
+
+          <li class="activity-item">
+            <span class="activity-dot"></span>
+            <span>Submitted HTML Assignment</span>
+            <span class="activity-time">2 hrs ago</span>
+          </li>
+
+          <li class="activity-item">
+            <span class="activity-dot"></span>
+            <span>Joined Web Development Class</span>
+            <span class="activity-time">Yesterday</span>
+          </li>
+
+          <li class="activity-item">
+            <span class="activity-dot"></span>
+            <span>Completed CSS Quiz</span>
+            <span class="activity-time">2 days ago</span>
+          </li>
+
+          <li class="activity-item">
+            <span class="activity-dot"></span>
+            <span>Enrolled in JavaScript Basics</span>
+            <span class="activity-time">3 days ago</span>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

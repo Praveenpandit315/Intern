@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up — Void.Praveen</title>
+  <!-- Base styles (shared across all pages) -->
+  <link rel="stylesheet" href="css/base.css" />
+  <!-- Auth page specific styles (login & signup) -->
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <!-- ======================================
+       SIGNUP PAGE
+       Centered card with registration form
+  ======================================= -->
+  <div class="auth-page">
+
+    <div class="auth-card">
+
+      <!-- Card Header: Logo + Title -->
+      <div class="auth-card-header">
+        <a href="index.html" class="auth-logo">Void.Praveen</a>
+        <h2>Create Account</h2>
+        <p>Join your classroom today — it's free</p>
+      </div>
+
+      <!-- Error Message (shown via JS when validation fails) -->
+      <div class="error-msg" id="signupError"></div>
+
+      <!-- Signup Form -->
+      <form id="signupForm" novalidate>
+
+        <!-- Full Name Field -->
+        <div class="form-group">
+          <label for="signupName">Full Name</label>
+          <input
+            type="text"
+            id="signupName"
+            name="name"
+            placeholder="John Doe"
+            autocomplete="name"
+          />
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="signupEmail">Email Address</label>
+          <input
+            type="email"
+            id="signupEmail"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+          />
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input
+            type="password"
+            id="signupPassword"
+            name="password"
+            placeholder="Minimum 6 characters"
+            autocomplete="new-password"
+          />
+        </div>
+
+        <!-- Confirm Password Field -->
+        <div class="form-group">
+          <label for="signupConfirm">Confirm Password</label>
+          <input
+            type="password"
+            id="signupConfirm"
+            name="confirm"
+            placeholder="Re-enter your password"
+            autocomplete="new-password"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+      </form>
+
+      <!-- Link back to Login -->
+      <p class="auth-footer-text">
+        Already have an account? <a href="login.html">Login</a>
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

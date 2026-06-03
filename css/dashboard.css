@@ -1,0 +1,281 @@
+/* ============================================
+   dashboard.css
+   Styles only for: dashboard.html
+   Sections:
+   - Overall layout (sidebar + main)
+   - Sidebar navigation
+   - Stats cards
+   - Recent activity list
+   ============================================ */
+
+/* ---------- Page Layout ---------- */
+/* Sidebar on left, main content on right */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 240px;
+  background-color: var(--white);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  /* Fixed so it stays while scrolling */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 50;
+}
+
+/* Brand/logo inside sidebar */
+.sidebar-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.35rem;
+  color: var(--primary);
+  padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: block;
+}
+
+/* Nav links list */
+.sidebar-nav {
+  padding: 1.25rem 0.75rem;
+  flex: 1;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+/* Hover + active state */
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.sidebar-nav a .nav-icon {
+  font-size: 1.15rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Logout link at bottom */
+.sidebar-logout {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.sidebar-logout a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #dc2626;
+  font-size: 0.93rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.sidebar-logout a:hover { opacity: 0.75; }
+
+/* ---------- Main Content Area ---------- */
+/* Left margin = sidebar width so content doesn't hide behind it */
+.dashboard-main {
+  margin-left: 240px;
+  flex: 1;
+  padding: 2.5rem;
+}
+
+/* Welcome heading */
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.dashboard-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Stats Cards Grid ---------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Each stat card */
+.stat-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* Emoji icon box */
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius);
+  background-color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Number + label */
+.stat-info h3 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ---------- Recent Activities ---------- */
+.activity-section {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.activity-section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Each activity row */
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg);
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.activity-item:hover {
+  background-color: var(--primary-light);
+}
+
+/* Blue dot on the left */
+.activity-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.activity-item span {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Timestamp pushed to the right */
+.activity-time {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  /* Sidebar becomes a horizontal top bar */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-brand {
+    border-bottom: none;
+    padding: 0;
+    flex: 1;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem 0 0;
+    width: 100%;
+    gap: 0.25rem;
+  }
+
+  .sidebar-nav li { margin-bottom: 0; }
+
+  .sidebar-nav a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  .sidebar-logout {
+    padding: 0 0.75rem;
+    border-top: none;
+  }
+
+  .dashboard-layout { flex-direction: column; }
+  .dashboard-main { margin-left: 0; padding: 1.5rem 1rem; }
+  .stats-grid { grid-template-columns: 1fr; }
+}

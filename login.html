@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Void.Praveen</title>
+  <!-- Base styles (shared across all pages) -->
+  <link rel="stylesheet" href="css/base.css" />
+  <!-- Auth page specific styles (login & signup) -->
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <!-- ======================================
+       LOGIN PAGE
+       Centered card with email + password fields
+  ======================================= -->
+  <div class="auth-page">
+
+    <div class="auth-card">
+
+      <!-- Card Header: Logo + Title -->
+      <div class="auth-card-header">
+        <a href="index.html" class="auth-logo">Void.Praveen</a>
+        <h2>Welcome Back</h2>
+        <p>Sign in to access your classroom</p>
+      </div>
+
+      <!-- Error Message (shown via JS if validation fails) -->
+      <div class="error-msg" id="loginError"></div>
+
+      <!-- Login Form -->
+      <form id="loginForm" novalidate>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="loginEmail">Email Address</label>
+          <input
+            type="email"
+            id="loginEmail"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+          />
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input
+            type="password"
+            id="loginPassword"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+      </form>
+
+      <!-- Link to Signup -->
+      <p class="auth-footer-text">
+        Don't have an account? <a href="signup.html">Create Account</a>
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
