@@ -4,147 +4,292 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard — Void.Praveen</title>
-  <!-- Base styles (shared across all pages) -->
   <link rel="stylesheet" href="css/base.css" />
-  <!-- Dashboard page specific styles -->
   <link rel="stylesheet" href="css/dashboard.css" />
 </head>
 <body>
+<div class="dashboard-layout">
 
-  <!-- ======================================
-       DASHBOARD LAYOUT
-       Left Sidebar + Main Content
-  ======================================= -->
-  <div class="dashboard-layout">
+  <!-- ======== SIDEBAR ======== -->
+  <aside class="sidebar">
+    <a href="index.html" class="sidebar-brand">
+      <span class="brand-dot"></span>Void.Praveen
+    </a>
 
-    <!-- ---- LEFT SIDEBAR ---- -->
-    <aside class="sidebar">
+    <span class="sidebar-label">Main Menu</span>
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="dashboard.html" class="active">
+            <span class="nav-icon">🏠</span> Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-icon">📚</span> My Courses
+            <span class="nav-badge">5</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-icon">📈</span> Progress
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-icon">🏫</span> Classroom
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-icon">👥</span> Community
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-      <!-- Brand Logo -->
-      <a href="index.html" class="sidebar-brand">Void.Praveen</a>
+    <span class="sidebar-label">Account</span>
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="#">
+            <span class="nav-icon">🏆</span> Certificates
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-icon">⚙️</span> Settings
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-      <!-- Navigation Links -->
-      <nav>
-        <ul class="sidebar-nav">
-
-          <li>
-            <a href="dashboard.html" class="active">
-              <span class="nav-icon">🏠</span> Dashboard
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <span class="nav-icon">📚</span> Courses
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <span class="nav-icon">📝</span> Assignments
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <span class="nav-icon">👤</span> Profile
-            </a>
-          </li>
-
-        </ul>
-      </nav>
-
-      <!-- Logout Link at the bottom -->
-      <div class="sidebar-logout">
-        <a href="index.html">
-          <span>🚪</span> Logout
-        </a>
+    <!-- User card at bottom -->
+    <div style="flex:1;"></div>
+    <a href="index.html" class="sidebar-user" title="Logout">
+      <div class="sidebar-avatar">PG</div>
+      <div class="sidebar-user-info">
+        <span class="sidebar-user-name">Praveen Gautam</span>
+        <span class="sidebar-user-role">Student · Free Plan</span>
       </div>
+      <span class="sidebar-logout-icon">🚪</span>
+    </a>
+  </aside>
 
-    </aside>
-
-    <!-- ---- MAIN CONTENT ---- -->
-    <main class="dashboard-main">
-
-      <!-- Page Header / Welcome Message -->
-      <div class="dashboard-header">
-        <h1>Welcome Back, Student! 👋</h1>
-        <p>Here's a summary of your learning activity.</p>
+  <!-- ======== TOP NAV ======== -->
+  <div class="dashboard-topnav">
+    <div class="topnav-search">
+      <span class="topnav-search-icon">🔍</span>
+      <input type="text" placeholder="Search courses, topics..." />
+    </div>
+    <div class="topnav-right">
+      <div class="topnav-icon-btn" title="Notifications">
+        🔔<span class="notif-dot"></span>
       </div>
-
-      <!-- ---- STATISTICS CARDS ---- -->
-      <div class="stats-grid">
-
-        <!-- Card 1: Total Courses -->
-        <div class="stat-card">
-          <div class="stat-icon">📚</div>
-          <div class="stat-info">
-            <h3>5</h3>
-            <p>Total Courses</p>
-          </div>
-        </div>
-
-        <!-- Card 2: Assignments -->
-        <div class="stat-card">
-          <div class="stat-icon">📝</div>
-          <div class="stat-info">
-            <h3>12</h3>
-            <p>Assignments</p>
-          </div>
-        </div>
-
-        <!-- Card 3: Attendance -->
-        <div class="stat-card">
-          <div class="stat-icon">✅</div>
-          <div class="stat-info">
-            <h3>85%</h3>
-            <p>Attendance</p>
-          </div>
-        </div>
-
+      <div class="topnav-icon-btn" title="Messages">💬</div>
+      <div class="topnav-profile">
+        <div class="topnav-profile-avatar">PG</div>
+        <span class="topnav-profile-name">Praveen</span>
       </div>
-
-      <!-- ---- RECENT ACTIVITIES SECTION ---- -->
-      <div class="activity-section">
-
-        <h2>Recent Activities</h2>
-
-        <ul class="activity-list">
-
-          <li class="activity-item">
-            <span class="activity-dot"></span>
-            <span>Submitted HTML Assignment</span>
-            <span class="activity-time">2 hrs ago</span>
-          </li>
-
-          <li class="activity-item">
-            <span class="activity-dot"></span>
-            <span>Joined Web Development Class</span>
-            <span class="activity-time">Yesterday</span>
-          </li>
-
-          <li class="activity-item">
-            <span class="activity-dot"></span>
-            <span>Completed CSS Quiz</span>
-            <span class="activity-time">2 days ago</span>
-          </li>
-
-          <li class="activity-item">
-            <span class="activity-dot"></span>
-            <span>Enrolled in JavaScript Basics</span>
-            <span class="activity-time">3 days ago</span>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </main>
-
+    </div>
   </div>
 
-  <!-- JavaScript -->
-  <script src="js/script.js"></script>
+  <!-- ======== MAIN CONTENT ======== -->
+  <main class="dashboard-main">
 
+    <!-- Welcome Banner -->
+    <div class="dashboard-welcome">
+      <div class="welcome-text">
+        <h1>Welcome Back, Praveen! 👋</h1>
+        <p>You're on a 7-day streak. Keep going — you're doing great!</p>
+      </div>
+      <div class="welcome-emoji">🚀</div>
+    </div>
+
+    <!-- Motivational Banner -->
+    <div class="motivation-banner">
+      <div class="motivation-icon">💡</div>
+      <div>
+        <p>"Small progress each day leads to big achievements."</p>
+        <cite>— Your daily reminder from Campus Coders</cite>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">📚</div>
+        <div class="stat-info">
+          <h3>5</h3>
+          <p>Courses Enrolled</p>
+          <span class="stat-trend">↑ +1 this week</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏆</div>
+        <div class="stat-info">
+          <h3>3</h3>
+          <p>Certificates Earned</p>
+          <span class="stat-trend">↑ +1 this month</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🔥</div>
+        <div class="stat-info">
+          <h3>7</h3>
+          <p>Day Streak</p>
+          <span class="stat-trend">↑ Personal best!</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⏱️</div>
+        <div class="stat-info">
+          <h3>42h</h3>
+          <p>Learning Hours</p>
+          <span class="stat-trend">↑ +3h this week</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Two-Column Grid -->
+    <div class="dashboard-grid">
+
+      <!-- LEFT COLUMN -->
+      <div style="display:flex; flex-direction:column; gap:1.5rem;">
+
+        <!-- Continue Learning -->
+        <div class="section-card">
+          <div class="section-card-header">
+            <h2>▶️ Continue Learning</h2>
+            <a href="#">Browse All</a>
+          </div>
+          <div class="course-cards">
+            <div class="course-card">
+              <div class="course-emoji">🌐</div>
+              <div class="course-info">
+                <h4>HTML & CSS Fundamentals</h4>
+                <div class="course-mini-bar">
+                  <div class="course-mini-fill" style="width:90%"></div>
+                </div>
+                <span class="course-meta">90% complete · Lesson 18 of 20</span>
+              </div>
+              <button class="course-btn">Continue →</button>
+            </div>
+            <div class="course-card">
+              <div class="course-emoji">⚡</div>
+              <div class="course-info">
+                <h4>JavaScript Basics</h4>
+                <div class="course-mini-bar">
+                  <div class="course-mini-fill" style="width:65%"></div>
+                </div>
+                <span class="course-meta">65% complete · Lesson 13 of 20</span>
+              </div>
+              <button class="course-btn">Continue →</button>
+            </div>
+            <div class="course-card">
+              <div class="course-emoji">⚛️</div>
+              <div class="course-info">
+                <h4>React for Beginners</h4>
+                <div class="course-mini-bar">
+                  <div class="course-mini-fill" style="width:30%"></div>
+                </div>
+                <span class="course-meta">30% complete · Lesson 6 of 20</span>
+              </div>
+              <button class="course-btn">Continue →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div style="display:flex; flex-direction:column; gap:1.5rem;">
+
+        <!-- Daily Goals -->
+        <div class="section-card">
+          <div class="section-card-header">
+            <h2>🎯 Daily Goals</h2>
+            <a href="#">Edit</a>
+          </div>
+          <div class="goals-list">
+            <div class="goal-item">
+              <div class="goal-check done">✓</div>
+              <span class="goal-text done">Complete HTML Revision</span>
+              <span class="goal-tag">Done</span>
+            </div>
+            <div class="goal-item">
+              <div class="goal-check done">✓</div>
+              <span class="goal-text done">Practice CSS Flexbox</span>
+              <span class="goal-tag">Done</span>
+            </div>
+            <div class="goal-item">
+              <div class="goal-check"></div>
+              <span class="goal-text">Finish JS Quiz Module 3</span>
+              <span class="goal-tag" style="background:#FEF3C7;color:#92400E;">Pending</span>
+            </div>
+            <div class="goal-item">
+              <div class="goal-check"></div>
+              <span class="goal-text">Watch React Hooks Video</span>
+              <span class="goal-tag" style="background:#FEF3C7;color:#92400E;">Pending</span>
+            </div>
+            <div class="goal-item">
+              <div class="goal-check"></div>
+              <span class="goal-text">Code 30 min on GitHub</span>
+              <span class="goal-tag" style="background:#FEF3C7;color:#92400E;">Pending</span>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+      <!-- Recent Activity -->
+        <div class="section-card">
+          <div class="section-card-header">
+            <h2>🕐 Recent Activity</h2>
+            <a href="#">All Activity</a>
+          </div>
+          <ul class="activity-list">
+            <li class="activity-item">
+              <div class="activity-icon-wrap">✅</div>
+              <div class="activity-content">
+                <span>Completed HTML Quiz</span>
+                <small>Score: 92% · 2 hours ago</small>
+              </div>
+              <span class="activity-badge badge-success">+50 XP</span>
+            </li>
+            <li class="activity-item">
+              <div class="activity-icon-wrap">🏆</div>
+              <div class="activity-content">
+                <span>Earned CSS Badge</span>
+                <small>CSS Fundamentals · Yesterday</small>
+              </div>
+              <span class="activity-badge badge-purple">Badge</span>
+            </li>
+            <li class="activity-item">
+              <div class="activity-icon-wrap">📖</div>
+              <div class="activity-content">
+                <span>Finished Lesson 5 — JS</span>
+                <small>JavaScript Basics · 2 days ago</small>
+              </div>
+              <span class="activity-badge badge-success">+30 XP</span>
+            </li>
+            <li class="activity-item">
+              <div class="activity-icon-wrap">🔥</div>
+              <div class="activity-content">
+                <span>7-Day Streak Unlocked</span>
+                <small>Consistency reward · 3 days ago</small>
+              </div>
+              <span class="activity-badge badge-warning">Streak</span>
+            </li>
+          </ul>
+        </div>
+
+  
+
+  </main>
+</div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
