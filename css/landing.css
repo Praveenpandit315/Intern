@@ -1,147 +1,299 @@
 /* ============================================
-   landing.css
-   Styles only for: index.html (Landing Page)
-   Sections:
-   - Hero
-   - Features Grid
+   landing.css — index.html only
+   Purple Theme Upgrade
    ============================================ */
 
 /* ---------- Hero Section ---------- */
 .hero {
-  padding: 6rem 0 4rem;
+  padding: 7rem 0 5rem;
   text-align: center;
-  background: linear-gradient(135deg, var(--primary-light) 0%, var(--bg) 60%);
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(109,40,217,0.12) 0%, transparent 70%), var(--bg);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Small badge above the heading */
+/* Decorative blobs */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(109,40,217,0.07) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: -60px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Badge */
 .hero-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   background-color: var(--primary-light);
   color: var(--primary);
-  font-size: 0.82rem;
+  font-size: 0.80rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  padding: 0.35rem 1rem;
+  padding: 0.4rem 1.1rem;
   border-radius: 50px;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  margin-bottom: 1.75rem;
+  border: 1px solid var(--border-purple);
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
   font-family: 'DM Serif Display', serif;
-  font-size: 3.2rem;
-  line-height: 1.2;
+  font-size: 3.4rem;
+  line-height: 1.18;
   color: var(--text);
-  max-width: 700px;
-  margin: 0 auto 1.25rem;
+  max-width: 720px;
+  margin: 0 auto 1.4rem;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.5px;
 }
-
-/* Italic + blue colored word in heading */
 .hero h1 em {
   color: var(--primary);
   font-style: italic;
+  position: relative;
 }
 
-.hero p {
-  font-size: 1.1rem;
+.hero-desc {
+  font-size: 1.08rem;
   color: var(--text-muted);
   max-width: 520px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2.75rem;
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
 }
 
-/* Two side-by-side buttons */
 .hero-buttons {
   display: flex;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero stats row */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-purple);
+  position: relative;
+  z-index: 1;
+}
+.hero-stat-item {
+  text-align: center;
+}
+.hero-stat-item strong {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.hero-stat-item span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.hero-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border-purple);
 }
 
 /* ---------- Features Section ---------- */
 .features {
-  padding: 5rem 0;
+  padding: 5.5rem 0;
   background-color: var(--white);
 }
 
 .features-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
-
+.features-header .section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+  margin-bottom: 0.85rem;
+}
 .features-header h2 {
   font-family: 'DM Serif Display', serif;
-  font-size: 2rem;
+  font-size: 2.1rem;
   color: var(--text);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.3px;
 }
-
 .features-header p {
   color: var(--text-muted);
   font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-/* 3-column grid for cards */
+/* 3-column grid */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
-/* Individual feature card */
 .feature-card {
-  background-color: var(--bg);
+  background-color: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 2rem;
-  text-align: center;
+  padding: 2rem 1.75rem;
+  text-align: left;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-mid), var(--primary-light));
+  opacity: 0;
   transition: var(--transition);
 }
-
 .feature-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-hover);
-  border-color: var(--primary);
+  border-color: var(--border-purple);
 }
+.feature-card:hover::before { opacity: 1; }
 
-/* Icon box inside each card */
 .feature-icon {
-  width: 60px;
-  height: 60px;
-  background-color: var(--primary-light);
+  width: 54px;
+  height: 54px;
+  background: var(--primary-light);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.25rem;
-  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.6rem;
+  transition: var(--transition);
+}
+.feature-card:hover .feature-icon {
+  background: var(--primary);
+  transform: scale(1.08);
 }
 
 .feature-card h3 {
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   font-weight: 700;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.55rem;
   color: var(--text);
 }
-
 .feature-card p {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ---------- How It Works Section ---------- */
+.how-it-works {
+  padding: 5.5rem 0;
+  background: var(--bg);
+}
+
+.how-it-works .features-header { margin-bottom: 3rem; }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.step-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  position: relative;
+  transition: var(--transition);
+}
+.step-card:hover {
+  box-shadow: var(--shadow);
+  border-color: var(--border-purple);
+  transform: translateY(-4px);
+}
+.step-number {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--primary-mid), var(--primary));
+  color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.step-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+.step-card p {
+  font-size: 0.88rem;
   color: var(--text-muted);
   line-height: 1.7;
 }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid,
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 4rem 0 3rem; }
-  .hero h1 { font-size: 2.2rem; }
-  .features-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .hero { padding: 4.5rem 0 3.5rem; }
+  .hero h1 { font-size: 2.3rem; }
+  .hero-stats { gap: 1.5rem; }
+  .features-grid,
+  .steps-grid { grid-template-columns: 1fr; gap: 1.25rem; }
 }
 
 @media (max-width: 480px) {
-  .hero h1 { font-size: 1.9rem; }
+  .hero h1 { font-size: 2rem; }
   .hero-buttons { flex-direction: column; align-items: center; }
+  .hero-stats { flex-direction: column; gap: 1rem; }
+  .hero-stat-divider { display: none; }
 }
